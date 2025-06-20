@@ -1,0 +1,7 @@
+cmake
+.vscode/
+build
+grpc
+vcpkg
+data
+ClusteredCrew*
