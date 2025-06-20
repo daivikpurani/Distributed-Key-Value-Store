@@ -1,6 +1,6 @@
 # Distributed Key-Value Store
 <!-- Insert image from assets -->
-![design](assets/Design.png)
+
 <br>
 This project is a Distributed Key-Value Store application that uses multi Raft groups to store key value in different partition. It RocksDB as the underlying Database and gPRC for server-client communication. Below are the steps to install the necessary dependencies and build the project.
 
