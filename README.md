@@ -1,7 +1,7 @@
 # Distributed Key-Value Store
-<!-- Insert image from assets -->
 
-<br>
+![System Design](assets/Design.png)
+
 This project is a Distributed Key-Value Store application that uses multi-Raft groups to store key-value pairs in different partitions. It uses RocksDB as the underlying database and gRPC for server-client communication.
 
 ## Features
@@ -158,6 +158,14 @@ The project relies on several external libraries, which are included and linked 
 Make sure that any external library is correctly linked in the `CMakeLists.txt` or `common.cmake` file if additional libraries are added in the future.
 
 ## Architecture
+
+![Detailed Architecture](assets/Distributed_Systems Project.drawio.png)
+
+The system architecture consists of:
+- **Hash Ring**: Central consistent hashing mechanism that distributes keys across partitions
+- **Raft Groups**: Multiple Raft consensus groups (5 nodes each) that manage different partitions
+- **Raft Servers**: Each server contains RocksDB for persistence, with Bloom filters and caching for performance
+- **Clients**: Client library with helper functions that route requests to the appropriate Raft group leader
 
 ### Snapshotting and Log Compaction
 - Snapshots are automatically created when the log exceeds 10,000 entries
